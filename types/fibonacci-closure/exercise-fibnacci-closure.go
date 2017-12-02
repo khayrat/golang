@@ -15,32 +15,6 @@ func fibonacci() func() int {
     }
 }
 
-func fibonacci_() func() int {
-    count, fn_1, fn_2 := 0, 0, 1
-
-    return func() int {
-        switch {
-        case count == 0:
-            {
-                count++
-                return 0
-            }
-        case count == 1:
-            {
-                count++
-                return 1
-            }
-        default:
-            {
-                fn := fn_1 + fn_2
-                fn_1 = fn_2
-                fn_2 = fn
-                return fn
-            }
-        }
-    }
-}
-
 func main() {
     f := fibonacci()
     for i := 0; i < 15; i++ {
